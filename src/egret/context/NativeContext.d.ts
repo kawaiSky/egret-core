@@ -58,6 +58,10 @@ declare module egret_native {
 
     function recivedPluginInfo(info:string):void;
 
+    function loadRecord(filepath:string):string;
+
+    function saveRecord(filepath:string, fileContent:string):void;
+
     module Audio {
         function preloadBackgroundMusic(path:string):void;
 
@@ -89,6 +93,18 @@ declare module egret_native {
 
         function popStencil():void;
 
+
+        function lineStyle(thickness:number, color:number):void;
+
+        function lineTo(x:number, y:number):void;
+
+        function moveTo(x:number, y:number):void;
+
+        function beginFill(color:number, alpha:number):void;
+
+        function endFill():void;
+
+
     }
 
     module Label {
@@ -119,4 +135,24 @@ declare module egret_native {
 
         function removeTexture(filePath:string):void;
     }
+
+
+    module TextInputOp {
+
+        function setKeybordOpen(isOpen:boolean):void
+        function isFullScreenKeyBoard():boolean
+
+
+    }
+
+    function EGT_TextInput(text:string):void
+    function EGT_keyboardFinish():void
+
+
+    function EGT_deleteBackward():void;
+
+    function EGT_keyboardDidHide():void;
+    function EGT_keyboardDidShow():void;
+
+    function EGT_getTextEditerContentText():string;
 }
